@@ -1,0 +1,94 @@
+<div class="ui bottom attached segment pushable"> 
+
+
+
+{{#ui-sidebar class="ui vertical menu sticky bound visible"}}
+		  	<div class="item">
+			  <a class="ui logo icon image" href="/">
+			    <img src="/logo.png" style="height:20px">
+			  </a>
+			  <a href="/">robodash</a>
+			  <h2>%ROBOTNAME%</h2>
+			</div>
+
+
+			<div class="item">
+			  <div class=" header">Modules</div>
+			  <div class="menu">
+			    
+			      <a class="item" href="/views/advertisement.html">
+			        %% Item %%
+			      </a>
+			    
+			  </div>
+			</div>
+
+
+			<div class="item">
+			  <div class="header">Settings</div>
+			  <div class="menu">
+			    
+			      <a class="item" href="/views/advertisement.html">
+			        Data Sources
+			      </a>
+
+			      <a class="item" href="/views/advertisement.html">
+			      	Pair Bluetooth
+			      </a>
+			    
+			  </div>
+			</div>
+{{/ui-sidebar}}
+ 
+
+<div class="pusher">
+	  <div class="ui masthead vertical segment">
+		<div class="ui container">    
+			%% top bar %%<div class="ui four mini statistics">
+      <div class="statistic">
+        <div class="value">
+          22
+        </div>
+        <div class="label">
+          Saves
+        </div>
+      </div>
+      <div class="statistic">
+        <div class="text value">
+          Three<br>
+          Thousand
+        </div>
+        <div class="label">
+          Signups
+        </div>
+      </div>
+      <div class="statistic">
+        <div class="value">
+          <i class="plane icon"></i> 5
+        </div>
+        <div class="label">
+          Flights
+        </div>
+      </div>
+      <div class="statistic">
+        <div class="value">
+           <i class="wifi icon"></i>
+          42
+        </div>
+        <div class="label">
+          Team Members
+        </div>
+      </div>
+    </div>
+		</div>
+	  </div>
+      <div class="ui basic segment">
+			
+			{{outlet}}
+
+      </div>
+</div>
+
+
+</div>
+

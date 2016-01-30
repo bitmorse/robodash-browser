@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Robodash</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+<meta name="robodash-browser/config/environment" content="%7B%22modulePrefix%22%3A%22robodash-browser%22%2C%22environment%22%3A%22production%22%2C%22baseURL%22%3A%22/%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22robodash-browser%22%2C%22version%22%3A%220.0.0+5b08a8cf%22%7D%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%22%27none%27%22%2C%22script-src%22%3A%22%27self%27%22%2C%22font-src%22%3A%22%27self%27%22%2C%22connect-src%22%3A%22%27self%27%22%2C%22img-src%22%3A%22%27self%27%22%2C%22style-src%22%3A%22%27self%27%22%2C%22media-src%22%3A%22%27self%27%22%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+<script>
+/* jshint browser: true */
+(function (window) {
+    if (window && window.process && window.process.type) {
+        window.ELECTRON = true;
+    }
+
+    window.requireNode = window.require;
+    window.moduleNode = window.module;
+    window.processNode = window.process;
+
+    delete window.process;
+    delete window.require;
+    delete window.module;
+})(this);
+
+</script>
+
+    <link rel="stylesheet" href="assets/vendor-41e26e7d0e20d188671e567d138e5cee.css">
+    <link rel="stylesheet" href="assets/robodash-browser-d41d8cd98f00b204e9800998ecf8427e.css" integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU= sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==" >
+
+    
+  </head>
+  <body>
+    
+
+    <script src="assets/vendor-9aa823288c708e16aa894cf850814949.js"></script>
+    <script src="assets/robodash-browser-394c4e4843850170a3ff5c0571718a6b.js" integrity="sha256-v2Lecbd8T/rPdx+lBmzSbmCndli9jPNQ/5p6l54/UrY= sha512-TNscq7eLne0tYWUeW32Ko4IqKUvIAP6k6rEHXsOkMWGETO/5f+OyQBgmVYjyVzRMaBsvAZuSU6Oaglb+DwIChw==" ></script>
+
+    <script>
+/* jshint browser: true */
+(function (window) {
+    if (!window.ELECTRON) {
+        return;
+    }
+
+    // Restore Electron variables.
+    window.process = window.processNode;
+
+    // Redefine a global `require` function that can satisfy both
+    // Node and AMD module systems.
+    var requireAMD = window.require;
+    var requireNode = window.requireNode;
+
+    if (requireAMD) {
+        window.require = function () {
+            try {
+                return requireAMD.apply(null, arguments);
+            } catch (e) {
+                return requireNode.apply(null, arguments);
+            }
+        };
+    } else {
+        window.require = requireNode;
+    }
+})(this);
+
+</script>
+  </body>
+</html>
