@@ -1,0 +1,10 @@
+<h2> machines index </h2>
+<b>total machines: {{model.length}}</b>
+
+<ul>
+{{#each model as |machine|}}
+  <li><h4>{{machine.name}}</h4><p>{{machine.description}}</p></li>
+{{/each}}
+</ul>
+
+<a href="machines/new">New machine</a>

@@ -1,0 +1,17 @@
+<form {{action "save" on="submit"}}>
+
+  <p>
+    <label>name
+      {{input value=model.name}}
+    </label>
+  </p>
+
+  <p>
+    <label>description
+      {{input value=model.description}}
+    </label>
+  </p>
+
+  <input type="submit" value="Save">
+  <button {{action "cancel"}}>Cancel</button>
+</form>

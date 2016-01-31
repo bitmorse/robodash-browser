@@ -6,8 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('robots');
-  this.route('new-robot');
+  this.route('machines', function(){
+    this.route('new');
+  });
+  this.route('connections');
+  this.route('devices');
 });
 
 export default Router;
