@@ -1,4 +1,4 @@
-<div class="ui bottom attached segment pushable"> 
+<div class="ui bottom attached segment pushable">
 
 
 
@@ -15,11 +15,10 @@
 			<div class="item">
 			  <div class=" header">Modules</div>
 			  <div class="menu">
-			    
-			      <a class="item" href="/views/advertisement.html">
-			        %% Item %%
-			      </a>
-			    
+
+					{{#link-to 'machines.index' activeClass="item"}} Machines {{/link-to}}
+
+
 			  </div>
 			</div>
 
@@ -27,7 +26,7 @@
 			<div class="item">
 			  <div class="header">Settings</div>
 			  <div class="menu">
-			    
+
 			      <a class="item" href="/views/advertisement.html">
 			        Data Sources
 			      </a>
@@ -35,15 +34,15 @@
 			      <a class="item" href="/views/advertisement.html">
 			      	Pair Bluetooth
 			      </a>
-			    
+
 			  </div>
 			</div>
 {{/ui-sidebar}}
- 
+
 
 <div class="pusher">
 	  <div class="ui masthead vertical segment">
-		<div class="ui container">    
+		<div class="ui container">
 			%% top bar %%<div class="ui four mini statistics">
       <div class="statistic">
         <div class="value">
@@ -83,7 +82,7 @@
 		</div>
 	  </div>
       <div class="ui basic segment">
-			
+
 			{{outlet}}
 
       </div>
@@ -91,4 +90,3 @@
 
 
 </div>
-
