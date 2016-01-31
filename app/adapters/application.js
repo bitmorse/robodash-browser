@@ -4,7 +4,7 @@ import config from 'robodash-browser/config/environment';
 import Ember from 'ember';
 
 //turn on debugging
-PouchDB.debug.enable('*');
+//PouchDB.debug.enable('*');
 
 
 const { assert, isEmpty } = Ember;
