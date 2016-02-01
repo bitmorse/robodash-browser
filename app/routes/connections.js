@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     save() {
       console.log("saving connection");
       this.modelFor("connections/edit").save().then(()=>{
-        this.transitionTo('machines/show');
+        this.transitionTo('views');
       });
       return false;
     },
@@ -15,7 +15,9 @@ export default Ember.Route.extend({
       //disassociate connection and delete connection
       connection.deleteRecord();
       connection.save().then(()=>{
-        connection.get('machine').save()
+        connection.get('machine').save().then(()=>{
+          this.transitionTo('views');
+        });
       });
     }
   }

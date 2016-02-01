@@ -23,17 +23,18 @@
       <div class="header">
         <div class="ui label ribbon"><i class="icon dashboard"></i> DASHBOARD</div>
 
-        <button class="circular ui icon mini button inverted right floated">
+
+        {{#link-to 'views.new' class="circular ui icon mini button inverted right floated"}}
           <i class="icon add"></i>
-        </button>
+        {{/link-to}}
       </div>
 
        <div class="menu">
-        <a href="#" class="item active"  >EPS</a>
-        <a href="#" class="item" >Solar Power</a>
-        <a href="#" class="item" >Motors</a>
-        <a href="#" class="item" >Navigation</a>
-        <a href="#" class="item" >Pose</a>
+         {{#each model.views as |view|}}
+
+          {{#link-to 'views.show' view class="item"}} {{view.name}} {{/link-to}} 
+
+         {{/each}}
 
       </div>
      </div>

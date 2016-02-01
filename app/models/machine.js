@@ -6,7 +6,8 @@ export default Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
   connections: DS.hasMany('connection',{async: false}),
-  devices: DS.hasMany('device',{async: false})
+  devices: DS.hasMany('device',{async: false}),
+  views: DS.hasMany('view',{async: false})
 });
 
 
@@ -18,4 +19,4 @@ $E.get('connections').createRecord({name: 'LOREM5'}).save()
 
 $E.save()
 
-*/ 
+*/

@@ -17,13 +17,23 @@ Router.map(function() {
       path: ':machine_id'
     },function(){
         this.route('connections', {resetNamespace:true}, function() {
-
           this.route('new');
           this.route('edit', {
             path: ':connection_id/edit'
           });
-
         });
+
+        this.route('views', {resetNamespace:true}, function() {
+          this.route('new');
+          this.route('edit', {
+            path: ':view_id/edit'
+          });
+          this.route('show', {
+            path: ':view_id'
+          });
+        });
+
+
       });
     });
 

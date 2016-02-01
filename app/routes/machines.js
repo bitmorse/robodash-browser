@@ -5,13 +5,13 @@ export default Ember.Route.extend({
   actions: {
     cancel(){
       console.log("cancelled machine crud");
-      this.transitionTo('machines');
+      this.transitionTo('views');
       return true;
     },
 
     delete(machine){
       machine.destroyRecord().then(() => {
-        this.transitionTo('machines.index');
+        this.transitionTo('views');
       });
     }
   }
