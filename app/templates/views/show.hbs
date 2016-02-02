@@ -1,7 +1,27 @@
-SINGLE VIEW HERE: {{model.name}}
-<hr>
+<div class="ui menu">
+  <div class="item">
+    <button class="ui icon button" {{action 'toggleSidebar'}}>
+        <i class="maximize icon"></i>
+    </button>
+  </div>
 
-<div id="ci-visualizer"></div>
+  <div class="item">
+    <button class="ui icon primary button" {{action 'saveVisualizerState'}}>
+      <i class="save icon"></i>
+    </button>
+  </div>
 
-<hr>
-{{#link-to 'views.edit' model class="item"}} EDIT {{/link-to}}
+  <div class="item">
+    {{#link-to 'views.edit' model class="ui icon button"}}
+      <i class="setting icon"></i>
+    {{/link-to}}
+  </div>
+
+  <div class="item">
+    <button class="ui icon primary button" {{action 'setVisualizerState' model}}>
+      <i class="refresh icon"></i>
+    </button>
+  </div>
+</div>
+
+<iframe src="assets/visualizer-build/index.html" id="visualizer-iframe" frameBorder="0"></iframe>

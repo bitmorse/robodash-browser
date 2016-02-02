@@ -21,9 +21,13 @@ module.exports = function(environment) {
     emberPouch: {
       //pouchdb config
     },
-
+    
+    //CHANGE THIS
     contentSecurityPolicy: {
-      "connect-src": "'self' http://localhost:5984"
+      "connect-src": "*",
+      "frame-src":"*",
+      "style-src":"*",
+      "font-src":"*"
     }
   };
 

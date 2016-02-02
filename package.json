@@ -20,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
+    "broccoli-funnel": "^1.0.1",
     "cylon": "~1.2.0",
     "cylon-api-socketio": "~0.4.0",
     "cylon-octanis1-rover": "~0.0.8",
@@ -42,7 +43,9 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-electron": "0.3.4",
     "ember-export-application-global": "^1.0.4",
+    "ember-keyboard-shortcuts": "0.3.0",
     "ember-pouch": "3.1.0",
+    "grunt": "^0.4.5",
     "semantic-ui-ember": "0.9.2"
   },
   "main": "electron.js",
@@ -76,5 +79,11 @@
       "ProductName": "Robodash",
       "InternalName": null
     }
+  },
+  "ember-addon": {
+    "paths": [
+      "lib/link-after-build"
+    ]
   }
+
 }
