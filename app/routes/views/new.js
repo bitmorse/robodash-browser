@@ -18,7 +18,7 @@ export default Ember.Route.extend({
         this.modelFor('machines/show').save().then(()=>{
           console.log("saved parent machine");
 
-          this.transitionTo('views');
+          this.transitionTo('views.show', model);
         });
       });
 

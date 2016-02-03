@@ -4,24 +4,31 @@
         <i class="maximize icon"></i>
     </button>
   </div>
-
   <div class="item">
-    <button class="ui icon primary button" {{action 'saveVisualizerState'}}>
-      <i class="save icon"></i>
-    </button>
+      <div class="ui input">
+        {{input value=model.name}}
+      </div>
   </div>
 
-  <div class="item">
-    {{#link-to 'views.edit' model class="ui icon button"}}
-      <i class="setting icon"></i>
-    {{/link-to}}
-  </div>
+  <div class="menu">
 
-  <div class="item">
-    <button class="ui icon primary button" {{action 'setVisualizerState' model}}>
-      <i class="refresh icon"></i>
-    </button>
+    <div class="item">
+      <button class="ui icon primary button" {{action 'saveVisualizerState'}}>
+        <i class="save icon"></i>
+      </button>
+    </div>
+
+    <div class="item">
+      {{#link-to 'views.edit' model class="ui icon button"}}
+        <i class="setting icon"></i>
+      {{/link-to}}
+    </div>
+
+    <div class="item">
+      <button class="ui icon button" {{action 'setVisualizerState' model}}>
+        <i class="refresh icon"></i>
+      </button>
+    </div>
   </div>
 </div>
-
-<iframe src="assets/visualizer-build/index.html" id="visualizer-iframe" frameBorder="0"></iframe>
+<iframe src="http://localhost:8000/build/index.html" id="visualizer-iframe" frameBorder="0"></iframe>
