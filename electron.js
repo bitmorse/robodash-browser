@@ -48,7 +48,7 @@ app.on('ready', function onReady() {
        },
 
        devices: {
-    
+
 	/*    rover_ble: {
           driver: "ble_cli",
           serviceId: "ffe0", characteristicId: "ffe1",
@@ -69,8 +69,12 @@ app.on('ready', function onReady() {
       port: '3000'
     });
 
-    Cylon.start();
 
+    try {
+      Cylon.start();
+    } catch(err){
+      console.log(err);
+    }
 
 
 
