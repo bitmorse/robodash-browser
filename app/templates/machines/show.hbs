@@ -67,17 +67,14 @@
           <i class="icon cubes"></i> DEVICES
         </div>
 
-        <button class="circular ui icon mini button inverted right floated">
+        {{#link-to 'devices.new' class="circular ui icon mini button inverted right floated"}}
           <i class="icon add"></i>
-        </button>
+        {{/link-to}}
       </div>
 
       <div class="menu">
-        {{model.devices.length}}
         {{#each model.devices as |device|}}
-
-            <a>{{device.name}}</a>
-
+          {{#link-to 'devices.edit' device class="item"}}{{device.name}}{{/link-to}}
         {{/each}}
       </div>
     </div>

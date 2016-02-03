@@ -43,16 +43,18 @@ app.on('ready', function onReady() {
     Cylon.robot({
        name: "octanis1_rover",
        connections: {
-         octanis1_rover: {adaptor: 'octanis1-rover'},
-         bluetooth: { adaptor: 'ble', uuid: 'cbef787e50934150ace41ce6385efabf'}
+         octanis1_rover: {adaptor: 'octanis1-rover'}
+         /* bluetooth: { adaptor: 'ble', uuid: 'cbef787e50934150ace41ce6385efabf'} */
        },
 
        devices: {
-        rover_ble: {
+    
+	/*    rover_ble: {
           driver: "ble_cli",
           serviceId: "ffe0", characteristicId: "ffe1",
           connection: "bluetooth"
         },
+	*/
 
         rover_joystick: {
           driver: "joystick",

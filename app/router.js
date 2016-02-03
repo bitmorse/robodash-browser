@@ -34,6 +34,17 @@ Router.map(function() {
         });
 
 
+        this.route('devices', {resetNamespace:true}, function() {
+          this.route('new');
+          this.route('edit', {
+            path: ':device_id/edit'
+          });
+          this.route('show', {
+            path: ':device_id'
+          });
+        });
+
+
       });
     });
 
