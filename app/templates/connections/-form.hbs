@@ -1,17 +1,18 @@
-<form {{action "save" on="submit"}}>
+<div class="ui grid">
+  <form class="ui form six wide" {{action "save" on="submit"}}>
 
-  <p>
-    <label>name
+    <div class="field">
+      <label>Name</label>
       {{input value=model.name}}
-    </label>
-  </p>
+    </div>
 
-  <p>
-    <label>type
+    <div class="field">
+      <label>Type</label>
       {{input value=model.type}}
-    </label>
-  </p>
+    </div>
 
-  <input type="submit" value="Save">
 
-</form>
+  <input class="ui button primary" type="submit" value="Save">
+
+ </form>
+</div>

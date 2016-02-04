@@ -1,39 +1,17 @@
 import Ember from 'ember';
+import config from 'robodash-browser/config/environment';
 
 export default Ember.Component.extend({
 
-  viewjson: '{}',
-
-  init: function(){
-    console.log("visualizer-iframe: init");
-  },
-
-  onDidRender: function(){
-    console.log("visualizer-iframe: rendered");
-    //this.set('viewjson', document.getElementById("visualizer-iframe").contentWindow);
-
-
-    //console.log(this.get('viewjson'));
-    //visualizerMessaging_setView
-
-  }.on('didRender'),
-
-  didUpdateAttrs(){
-    this._super(...arguments);
-
-    console.log("didUpdateAttrs");
-  },
-
-  didRender(){
-    this._super(...arguments);
-
-    console.log("didRender");
-  }
-
-
-
-
-
+  src: Ember.computed('devsrc', 'prodsrc', {
+    get(){
+      if (config.environment === 'production') {
+        return this.get('prodsrc');
+      }else{
+        return this.get('devsrc');
+      }
+    }
+  })
 
 
 });

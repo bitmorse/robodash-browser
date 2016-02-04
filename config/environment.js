@@ -21,7 +21,7 @@ module.exports = function(environment) {
     emberPouch: {
       //pouchdb config
     },
-    
+
     //CHANGE THIS
     contentSecurityPolicy: {
       "connect-src": "*",
@@ -58,6 +58,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    //PouchDB conf
+    ENV.emberPouch.localDb = 'robodash';
+    ENV.emberPouch.remoteDb = 'http://localhost:5984/robodash';
+
   }
 
 

@@ -1,17 +1,24 @@
-<form {{action "save" on="submit"}}>
+<div class="ui grid">
+  <form class="ui form six wide" {{action "save" on="submit"}}>
 
-  <p>
-    <label>name
+    <div class="field">
+      <label>Name</label>
       {{input value=model.name}}
-    </label>
-  </p>
+    </div>
 
-  <p>
-    <label>viewjson
-      {{input value=model.viewjson}}
-    </label>
-  </p>
 
-  <input type="submit" value="Save">
+    {{#copy-button
+      clipboardText=model.viewjson
+      success='success'
+      error='error'
+      class='ui button'
+    }}
+      Copy View to Clipboard
+    {{/copy-button}}
 
-</form>
+    <input class="ui button primary" type="submit" value="Save">
+
+    {{yield}}
+
+  </form>
+</div>
