@@ -1,3 +1,6 @@
 {{#fullscreen-subwindow title="Machine Settings" exit="cancel"}}
       {{partial "machines/form"}}
+
+      <button {{action 'delete' model}}  class="ui button">Delete</button>
+
 {{/fullscreen-subwindow}}

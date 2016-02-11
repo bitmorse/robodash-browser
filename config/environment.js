@@ -41,7 +41,7 @@ module.exports = function(environment) {
 
     //PouchDB conf
     ENV.emberPouch.localDb = 'robodash';
-    ENV.emberPouch.remoteDb = 'http://localhost:5984/robodash';
+    ENV.emberPouch.remoteDb = 'https://sync.robodash.io:443/robodash';
 
   }
 
@@ -60,7 +60,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     //PouchDB conf
     ENV.emberPouch.localDb = 'robodash';
-    ENV.emberPouch.remoteDb = 'http://localhost:5984/robodash';
+    ENV.emberPouch.remoteDb = 'https://sync.robodash.io:443/robodash';
 
   }
 

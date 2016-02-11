@@ -5,15 +5,17 @@
       <label>Name</label>
       {{input value=model.name}}
     </div>
-
+    <div class="field">
+      <label>Category</label>
+      {{input value=model.category}}
+    </div>
     <div class="field">
       <label>Description</label>
       {{input value=model.description}}
     </div>
 
-
-  <input class="ui button primary" type="submit" value="Save">
-  {{yield}}
+    <input class="ui button primary" type="submit" value="Save">
+    {{yield}}
 
  </form>
 </div>

@@ -20,6 +20,7 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
   app.import('vendor/visualizer-messaging.js');
+  app.import('bower_components/pouchdb-authentication/dist/pouchdb.authentication.js');
 
 
   // Providing additional trees to the `toTree` method will result in those

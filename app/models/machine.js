@@ -5,6 +5,7 @@ import { Model } from 'ember-pouch';
 export default Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
+  category: DS.attr('string'),
   connections: DS.hasMany('connection',{async: false}),
   devices: DS.hasMany('device',{async: false}),
   views: DS.hasMany('view',{async: false})

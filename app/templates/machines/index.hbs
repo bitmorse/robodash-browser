@@ -1,19 +1,66 @@
-<h2> machines index </h2>
-<b>total machines: {{model.length}}</b>
+<div class="ui container">
+    <h1 class="topheader ui center aligned header">Robodash</h1>
+    <div class="ui four cards">
+      {{#each model as |machine|}}
+        <div class="ui card">
 
-<ul>
-{{#each model as |machine|}}
-  <li>
-    {{#link-to 'machines.show' machine}}
-      {{machine.name}} {{machine.description}}
+          <div class="image dimmable">
+            <div class="ui blurring inverted dimmer transition hidden">
+              <div class="content">
+                <div class="center">
+                  {{#link-to 'machines.show' machine class='ui yellow huge button'}}
+                   View
+                   {{/link-to}}
+                </div>
+              </div>
+            </div>
+            <img src="octanis1.png">
+          </div>
+          <div class="content">
+            <div class="header">{{machine.name}}
+              {{#link-to 'machines.edit' machine class='ui circular icon button right floated'}}
+                <i class="icon pencil"></i>
+              {{/link-to}}
+            </div>
+            <div class="meta">
+              <a class="group">{{machine.category}}</a>
+            </div>
+            <div class="description">{{machine.description}}</div>
+          </div>
+          <div class="extra content">
+             <div class="ui icon right floated" style="padding-top:3px;">
+               <i class="icon star"></i> 2
+             </div>
+          </div>
+        </div>
+      {{/each}}
+  </div>
+</div>
+
+<div class="ui container segment">
+  <div class="ui center input">
+    {{#link-to 'machines.new' class='ui black button'}}
+      <i class="add icon"></i>
+      Add Yours
     {{/link-to}}
-    |
-    {{#link-to 'machines.edit' machine}} Edit {{/link-to}}
-    <a href="#" {{action "delete" machine}}> Delete </a>
-  </li>
-{{/each}}
-</ul>
+  </div>
+</div>
+<script type="text/javascript">
 
-{{#link-to 'machines.new'}}
-New machine
-{{/link-to}}
+$(document)
+  .ready(function() {
+    $('.special.card .image').dimmer({
+      on: 'hover'
+    });
+    $('.star.rating')
+      .rating()
+    ;
+    $('.card .dimmer')
+      .dimmer({
+        on: 'hover'
+      })
+    ;
+  })
+;
+
+</script>
