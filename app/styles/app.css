@@ -10,3 +10,11 @@
 .ui.header.topheader {
   margin: 30px 0 40px 0;
 }
+
+.ui.visible.right.sidebar ~ .fixed, .ui.visible.right.sidebar ~ .pusher {
+  transform: none;
+}
+
+.ui.card:hover {
+  transform: scale(1.03);
+}

@@ -4,19 +4,23 @@
       {{#each model as |machine|}}
         <div class="ui card">
 
-          <div class="image dimmable">
+
+            {{#link-to 'machines.show' machine class="image dimmable"}}
+
             <div class="ui blurring inverted dimmer transition hidden">
               <div class="content">
                 <div class="center">
-                  {{#link-to 'machines.show' machine class='ui yellow huge button'}}
-                   View
-                   {{/link-to}}
+                   <div class="ui yellow huge button">
+                     View
+                   </div>
                 </div>
               </div>
             </div>
             <img src="octanis1.png">
-          </div>
-          <div class="content">
+
+            {{/link-to}}
+
+           <div class="content">
             <div class="header">{{machine.name}}
               {{#link-to 'machines.edit' machine class='ui circular icon button right floated'}}
                 <i class="icon pencil"></i>

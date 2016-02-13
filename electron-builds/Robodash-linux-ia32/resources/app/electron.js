@@ -20,14 +20,15 @@ app.on('window-all-closed', function onWindowAllClosed() {
 
 app.on('ready', function onReady() {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600
+        minWidth: 800,
+        minHeight: 600,
+        overlayScrollbars: false
     });
 
     delete mainWindow.module;
 
     // If you want to open up dev tools programmatically, call
-    mainWindow.openDevTools();
+    //mainWindow.openDevTools();
 
     // By default, we'll open the Ember App by directly going to the
     // file system.
@@ -42,16 +43,18 @@ app.on('ready', function onReady() {
     Cylon.robot({
        name: "octanis1_rover",
        connections: {
-         octanis1_rover: {adaptor: 'octanis1-rover'},
-         bluetooth: { adaptor: 'ble', uuid: 'cbef787e50934150ace41ce6385efabf'}
+         octanis1_rover: {adaptor: 'octanis1-rover'}
+         /* bluetooth: { adaptor: 'ble', uuid: 'cbef787e50934150ace41ce6385efabf'} */
        },
 
        devices: {
-        rover_ble: {
+
+	/*    rover_ble: {
           driver: "ble_cli",
           serviceId: "ffe0", characteristicId: "ffe1",
           connection: "bluetooth"
         },
+	*/
 
         rover_joystick: {
           driver: "joystick",
@@ -66,8 +69,12 @@ app.on('ready', function onReady() {
       port: '3000'
     });
 
-    Cylon.start();
 
+    try {
+      Cylon.start();
+    } catch(err){
+      console.log(err);
+    }
 
 
 

@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import config from './config/environment';
+import LoadingSliderMixin from './mixins/loading-slider';
 
-const Router = Ember.Router.extend({
+const Router = Ember.Router.extend(LoadingSliderMixin, {
   location: config.locationType
 });
 

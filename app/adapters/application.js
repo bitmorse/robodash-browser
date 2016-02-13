@@ -18,8 +18,7 @@ function createDb() {
 
   console.log("created local pouch");
   console.log("remote pouch: "+config.emberPouch.remoteDb);
-
-
+  
   if (config.emberPouch.remoteDb) {
 
     var publicUser = {
