@@ -22,6 +22,11 @@ module.exports = function(environment) {
       //pouchdb config
     },
 
+    "ember-simple-auth": {
+      authenticationRoute: 'login',
+      routeAfterAuthentication: 'machines'
+    },
+
     //CHANGE THIS
     contentSecurityPolicy: {
       "connect-src": "*",
