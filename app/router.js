@@ -8,6 +8,7 @@ const Router = Ember.Router.extend(LoadingSliderMixin, {
 
 Router.map(function() {
   this.route('machines', function(){
+
     this.route('new');
 
     this.route('edit', {

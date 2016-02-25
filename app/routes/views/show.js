@@ -7,7 +7,7 @@ export default Ember.Route.extend({
       didTransition: function() {
         console.log("robodash: canvas is ready for visualizer");
         var viewjson = this.modelFor("views/show").get('viewjson');
-        visualizerMessaging_setView(viewjson)
+        visualizerMessaging_setView(viewjson);
       }
   }
 

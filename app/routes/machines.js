@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   actions: {
     cancel(){
       console.log("cancelled machine crud");
-      this.transitionTo('views');
+      this.transitionTo('machines');
       return true;
     },
 

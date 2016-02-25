@@ -1,0 +1,47 @@
+<div class="ui middle aligned center aligned grid login">
+  <div class="column">
+    <h2 class="ui image header">
+      <img src="http://placehold.it/100x100" class="image">
+      <div class="content">
+        Sign Up to Robodash
+      </div>
+    </h2>
+    <form class="ui large form"  {{action 'signup' on='submit'}}>
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="mail icon"></i>
+            {{input id='email' placeholder='Enter E-Mail' value=email}}
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            {{input id='username' placeholder='Enter Username' value=username}}
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            {{input id='password' placeholder='Enter Password' type='password' value=password}}
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            {{input id='password2' placeholder='Repeat Password' type='password' value=password2}}
+          </div>
+        </div>
+        <input type="submit" class="ui fluid large yellow submit button" value="Signup">
+      </div>
+      {{#if errorMessage}}
+        <div class="ui error message">{{errorMessage}}</div>
+      {{/if}}
+
+    </form>
+
+    <div class="ui message">
+      Already have an account? {{#link-to 'login'}}Login{{/link-to}}
+    </div>
+  </div>
+</div>

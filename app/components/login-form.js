@@ -8,11 +8,8 @@ export default Ember.Component.extend({
       console.log("login-form: attempting authentication");
       let { email, password } = this.getProperties('email', 'password');
 
-
-      this.get('session').authenticate('authenticator:pouchdb-authentication', email, password).then((response)=>{
-        console.log("login-form: authed");
-      }, (err) => {
-        this.set("errorMessage", "E-Mail or password incorrect.")
+      this.get('session').authenticate('authenticator:pouchdb-authentication', email, password).catch((response)=>{
+        this.set("errorMessage", response.message)
       });
     }
   }

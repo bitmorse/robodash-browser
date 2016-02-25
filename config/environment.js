@@ -17,22 +17,22 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-
+    contentSecurityPolicy: {
+      'default-src': ["'none'"],
+      'script-src':  ["'self'"],
+      'font-src':    ["'self'"],
+      'connect-src': ["'self' *"],
+      'img-src':     ["'self'"],
+      'style-src':   ["'self'"],
+      'media-src':   ["'self'"]
+    },
     emberPouch: {
       //pouchdb config
     },
 
     "ember-simple-auth": {
       authenticationRoute: 'login',
-      routeAfterAuthentication: 'machines'
-    },
-
-    //CHANGE THIS
-    contentSecurityPolicy: {
-      "connect-src": "*",
-      "frame-src":"*",
-      "style-src":"*",
-      "font-src":"*"
+      routeAfterAuthentication: 'index'
     }
   };
 
@@ -45,8 +45,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     //PouchDB conf
-    ENV.emberPouch.localDb = 'robodash';
-    ENV.emberPouch.remoteDb = 'https://sync.robodash.io:443/robodash';
+    ENV.emberPouch.localDbPrefix = 'robodash-user%2F';
+    ENV.emberPouch.remoteDbPrefix = 'robodash-user%2F';
+    ENV.emberPouch.remoteCouch = 'https://sync.robodash.io/';
 
   }
 

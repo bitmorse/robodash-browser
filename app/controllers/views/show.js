@@ -17,7 +17,16 @@ export default Ember.Controller.extend({
         }else if(ev.data.event === "visualizer:switchedView"){
           console.log("robodash: switchedview! iframe probably ready");
           this.send("setVisualizerState", this.get('model'));
+
+        }else if(ev.data.event === "visualizer:view"){
+          if(ev.data.eventData.message === "viewSetSuccess"){
+            console.log("robodash: visualizer viewJSON was loaded");
+          }else{
+            console.log("robodash: error: visualizer viewJSON was not loaded");
+          }
+
         }
+
       }.bind(this),
     false);
 
@@ -30,7 +39,8 @@ export default Ember.Controller.extend({
       console.log("robodash: setting visualizer state");
       var viewjson = view.get('viewjson');
       visualizerMessaging_setView(viewjson);
-    }.bind(document),
+
+    },
 
     toggleSidebar() {
       console.log("toggling sidebar");
